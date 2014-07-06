@@ -20,6 +20,8 @@ public class SignUpActivity extends Activity {
     protected EditText mUsername;
     protected EditText mPassword;
     protected EditText mEmail;
+    protected EditText mNativeLanguage;
+    protected EditText mLearningLanguage;
     protected Button mSignUpButton;
 
     @Override
@@ -30,6 +32,8 @@ public class SignUpActivity extends Activity {
         mUsername = (EditText) findViewById(R.id.usernameField);
         mPassword = (EditText) findViewById(R.id.passwordField);
         mEmail = (EditText) findViewById(R.id.emailField);
+        mNativeLanguage = (EditText) findViewById(R.id.spokenLanguageField);
+        mLearningLanguage = (EditText) findViewById(R.id.learningLanguageField);
         mSignUpButton = (Button) findViewById(R.id.signUpButton);
         mSignUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,13 +41,17 @@ public class SignUpActivity extends Activity {
                 String username = mUsername.getText().toString();
                 String password = mPassword.getText().toString();
                 String email = mEmail.getText().toString();
+                String nativeLanguage = mNativeLanguage.getText().toString();
+                String learningLanguage = mLearningLanguage.getText().toString();
 
                 //TODO: better analysis if input is correct
                 username = username.trim();
                 password = password.trim();
                 email = email.trim();
+                nativeLanguage = nativeLanguage.trim().toLowerCase();
+                learningLanguage = learningLanguage.trim().toLowerCase();
 
-                if (username.isEmpty() || password.isEmpty() || email.isEmpty()) {
+                if (username.isEmpty() || password.isEmpty() || email.isEmpty() || nativeLanguage.isEmpty() || learningLanguage.isEmpty()) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(SignUpActivity.this);
                     builder.setMessage(getString(R.string.signup_error_message))
                         .setTitle(getString(R.string.signup_error_title))
@@ -57,6 +65,8 @@ public class SignUpActivity extends Activity {
                     newUser.setUsername(username);
                     newUser.setPassword(password);
                     newUser.setEmail(email);
+                    newUser.put(ParseConstants.KEY_LANGUAGE_NATIVE,nativeLanguage);
+                    newUser.put(ParseConstants.KEY_LANGUAGE_LEARNING,learningLanguage);
 
                     newUser.signUpInBackground(new SignUpCallback() {
                         @Override

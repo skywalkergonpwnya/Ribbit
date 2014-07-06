@@ -1,6 +1,7 @@
 package com.skywalkergonpwnya.ribbit.ribbit_app;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
 import android.util.Log;
@@ -8,12 +9,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseQuery;
 import com.parse.ParseRelation;
 import com.parse.ParseUser;
+import com.parse.SaveCallback;
 
 import java.util.List;
 
@@ -73,6 +76,22 @@ public class FriendsFragment extends ListFragment {
             }
 
         });
+    }
+
+    public void onListItemClick(ListView l, View v, int position, long id) {
+        super.onListItemClick(l,v,position,id);
+        Log.i(TAG, "AAAAAAAAAAAAAAAAAAAAAAAAAA");
+
+        try {
+            //ParseUser profileUser = mFriends.get(position);
+
+            Intent intent = new Intent(getActivity(), ProfileActivity.class);
+            startActivity(intent);
+            Log.i(TAG, "what is happening");
+        }
+        catch (Exception e) {
+            e.getMessage();
+        }
     }
 
 }

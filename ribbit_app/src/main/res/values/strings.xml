@@ -24,5 +24,8 @@
     <string name="menu_edit_friends_label">Add friends</string>
     <string name="title_activity_edit_friends">Edit Friends</string>
     <string name="error_title">We\'re sorry, there was an error.</string>
+    <string name="fluent_languages_hint">Name your native language.</string>
+    <string name="learning_languages_hint">Name one language you want to learn.</string>
+    <string name="title_activity_profile">ProfileActivity</string>
 
 </resources>

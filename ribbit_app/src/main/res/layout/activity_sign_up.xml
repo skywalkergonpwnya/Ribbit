@@ -36,13 +36,34 @@
         android:layout_below="@+id/passwordField"
         android:ems="10"
         android:hint="@string/email_hint"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/spokenLanguageField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/emailField"
+        android:ems="10"
+        android:hint="@string/fluent_languages_hint"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/learningLanguageField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spokenLanguageField"
+        android:ems="10"
+        android:hint="@string/learning_languages_hint"
         android:inputType="textEmailAddress" />
+
 
     <Button
         android:id="@+id/signUpButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/emailField"
         android:layout_centerHorizontal="true"
-        android:text="@string/sign_up_button_label" />
+        android:text="@string/sign_up_button_label"
+        android:layout_below="@+id/learningLanguageField" />
+
+
 </RelativeLayout>

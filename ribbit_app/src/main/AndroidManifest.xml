@@ -34,8 +34,12 @@
             android:name="com.skywalkergonpwnya.ribbit.ribbit_app.EditFriendsActivity"
             android:parentActivityName="com.skywalkergonpwnya.ribbit.ribbit_app.MainActivity"
             android:label="@string/title_activity_edit_friends"
-            android:screenOrientation="portrait" >
-        </activity>
+            android:screenOrientation="portrait" />
+        <activity android:name="com.skywalkergonpwnya.ribbit.ribbit_app.ProfileActivity"
+            android:parentActivityName="com.skywalkergonpwnya.ribbit.ribbit_app.MainActivity"
+            android:label="@string/title_activity_profile"
+            android:screenOrientation="portrait"
+            />
     </application>
 
 </manifest>
